@@ -5,14 +5,14 @@ _BASE_RESOLUTION = 13
 _BASE_CLOCK = 8
 _BASE_QUALITY = 10
 
-URL = "http://192.168.15.22"  # insert the IP Address of the ESP32
+URL = "http://{Your ESP32 IP Address}"  # insert the IP Address of the ESP32
 
 cap = cv2.VideoCapture(URL + ":81/stream")
 
 resolutions = {0: "(96x96)",1: "QQVGA (160x120)", 2: "(128x128)", 3: "QCIF(176x144)", 4: "HQVGA(240x176)", 5: "(240x240)", 6: "QVGA(320x240)", 8: "CIF(400x296)", 9: "HVGA(480x320)", 10: "VGA(640x480)",
                11: "SVGA(800x600)", 12: "XGA(1024x768)", 13: "HD(1280x720)", 14: "SXGA(1280x1024)", 15: "UXGA(1600x1200)"}
 
-classifier = cv2.CascadeClassifier("data/haarcascade_frontalface_default.xml")
+classifier = cv2.CascadeClassifier("data/haarcascade_frontalface_default.xml") # Other options in data folder
 
 
 def set_resolution(url: str, index: int = 1):
